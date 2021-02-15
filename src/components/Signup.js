@@ -10,7 +10,7 @@ const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup,currentUser} = useAuth();
+  const { signup } = useAuth();
   
 
   const handleSubmit = async (e) => {
