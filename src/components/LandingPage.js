@@ -1,10 +1,13 @@
 import React from 'react'
+import { Jumbotron } from 'react-bootstrap'
 
 const LandingPage = () => {
   return (
-    <div>
-      <h1>Landing Page</h1>
-    </div>
+    <>
+      <Jumbotron style={{height: "100vh"}}>
+      <h1>Meet Your Destiny</h1>
+      </Jumbotron>  
+    </>
   )
 }
 
