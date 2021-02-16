@@ -7,7 +7,7 @@ import LandingPage from './LandingPage.js'
 import Login from './Login.js'
 import Dashboard from './Dashboard.js'
 import PrivateRoute from './PrivateRoute.js'
-
+import ForgotPassword from "./ForgotPassword.js"
 const App = () => {
   return (
         <Container
@@ -18,18 +18,24 @@ const App = () => {
           <Router>
             <AuthProvider>
               <Switch>
+                <Route exact path="/">
+                  <LandingPage/>
+                </Route>  
+              
                 <Route path="/signup">
                   <Signup />
-              </Route>
+                </Route>
 
-              <Route exact path="/">
-                <LandingPage/>
-              </Route>
+                <Route path="/login">
+                  <Login/>
+                </Route>
 
-              <Route path="/login">
-                <Login/>
-              </Route>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <Route path="/forgot-password">
+                  <ForgotPassword/>
+                </Route>
+
+
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
           
 
 

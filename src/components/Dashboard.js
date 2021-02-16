@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Button, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 const Dashboard = () => {
 
@@ -27,7 +27,7 @@ const Dashboard = () => {
           <h2 className="text-center mb-4">Characters</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <p>for {currentUser && currentUser.email}</p>
-          <Link to ="/update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link>
+          {/* <Link to ="/update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link> */}
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
