@@ -1,0 +1,11 @@
+$theme-colors: (
+  "primary": #9228b8,
+  "dark": #222,
+  "secondary": #333,
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+body {
+  background-color: var(--dark);
+}

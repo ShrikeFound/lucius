@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navbar,Nav,Container,Button} from 'react-bootstrap'
+import { Navbar,Nav,Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -23,8 +23,7 @@ const Header = () => {
     } else {
       return (
         <>
-        <Link className="nav-link" to="/login">Log in</Link>
-        <Link className="nav-link" to="/signup">Sign Up</Link>
+          <Link className="btn btn-primary" to="/login">Log in</Link>
         </>
       )
     }
@@ -36,7 +35,8 @@ const Header = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Link className="nav-link" to="/features">Features!</Link>
+          <Link className="nav-link" to="/features">Fate Deck</Link>
+          <Link className="nav-link" to="/features">Character Sheet</Link>
           <Link className="nav-link" to="/documentation">Documentation</Link>
         </Nav>
 

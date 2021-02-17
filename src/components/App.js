@@ -9,7 +9,7 @@ import PrivateRoute from './PrivateRoute.js'
 import ForgotPassword from "./ForgotPassword.js"
 import FormContainer from './FormContainer.js'
 import Header from './Header'
-import "../styles/style.scss"
+import "../custom.scss"
 const App = () => {
   return (
           <Router>
