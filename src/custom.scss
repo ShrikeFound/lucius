@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap");
 $theme-colors: (
   "primary": #9228b8,
   "dark": #222,
@@ -6,6 +7,37 @@ $theme-colors: (
 
 @import "~bootstrap/scss/bootstrap.scss";
 
+html {
+  font-size: 18px;
+}
+
 body {
   background-color: var(--dark);
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+.btn {
+  &.btn-primary {
+    &.btn-hero {
+      padding: 1rem 2.1rem;
+    }
+  }
+}
+
+.text-container {
+  max-width: 60ch;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: all ease-in-out 250ms;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 1) !important;
 }

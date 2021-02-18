@@ -35,8 +35,8 @@ const Header = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Link className="nav-link" to="/features">Fate Deck</Link>
-          <Link className="nav-link" to="/features">Character Sheet</Link>
+          <Link className="nav-link" to="/fate-deck">Fate Deck</Link>
+          <Link className="nav-link" to="/character-sheet">Character Sheet</Link>
           <Link className="nav-link" to="/documentation">Documentation</Link>
         </Nav>
 
