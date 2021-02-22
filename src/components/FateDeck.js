@@ -12,7 +12,7 @@ const FateDeck = () => {
       <h3 className="mt-5">Commands</h3>
       
 
-      <ListGroup className="w-75">
+      <ListGroup className = "no-side-borders">
 
         <ListGroup.Item >
           <div className="d-flex justify-content-between">

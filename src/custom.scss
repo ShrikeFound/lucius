@@ -28,6 +28,15 @@ h2 {
   font-weight: 600;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
 .btn {
   &.btn-primary {
     &.btn-hero {
@@ -50,4 +59,9 @@ h2 {
 }
 #root {
   padding-top: 8rem;
+}
+
+.no-side-borders > div {
+  border-left: 0;
+  border-right: 0;
 }
