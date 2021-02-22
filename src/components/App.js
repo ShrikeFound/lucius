@@ -10,6 +10,7 @@ import ForgotPassword from "./ForgotPassword.js"
 import FormContainer from './FormContainer.js'
 import Header from './Header'
 import "../custom.scss"
+import FateDeck from './FateDeck.js'
 const App = () => {
   return (
           <Router>
@@ -37,6 +38,10 @@ const App = () => {
             <FormContainer>
               <ForgotPassword />
             </FormContainer>  
+          </Route>
+
+          <Route path="/using-lucius">
+            <FateDeck/> 
           </Route>
 
 
