@@ -16,6 +16,17 @@ const FateDeck = () => {
 
         <ListGroup.Item >
           <div className="d-flex justify-content-between">
+            <h5>Help</h5>
+            <small>All</small>
+          </div>
+          <p>
+            Lists the available commands in a private message to you.
+          </p>
+          <small><code>!help</code></small>
+        </ListGroup.Item>
+        
+        <ListGroup.Item >
+          <div className="d-flex justify-content-between">
             <h5>Flip</h5>
             <small>Fate Deck</small>
           </div>
@@ -31,7 +42,7 @@ const FateDeck = () => {
             <small>Fate Deck</small>
           </div>
           <p>
-            Places a number of cards from the discard pile back unto the deck. Useful for when we flip a card too many but don't want to waste a Joker. Omitting a number will unflip one (1) card by default.
+            Places a number of cards from the discard pile back unto the fate deck. Useful for when we flip a card too many but don't want to waste a Joker. Omitting a number will unflip one (1) card by default.
           </p>
           <small><code>!unflip [number]</code></small>
         </ListGroup.Item>
@@ -43,9 +54,9 @@ const FateDeck = () => {
           <small>Control Hand | Fate Deck</small>
         </div>
         <p>
-          This command shuffles either the fate deck or your control hand.
+          This command shuffles either the fate deck or your twist deck.
         </p>
-        <small>control hand: <code>!shuffle</code>     |    fate deck: <code>!shuffle_fate</code></small>
+        <small>control hand: <code>!shuffle_twist</code>     |    fate deck: <code>!shuffle_fate</code></small>
       </ListGroup.Item>
 
 
@@ -59,6 +70,17 @@ const FateDeck = () => {
             work just as well as <code>!create Tomes Crows Rams Masks</code>. The suits should be ordered in descending order.
           </p>
           <small><code>!create [defining suit] [ascendant suit] [center suit] [descendant suit]</code></small>
+        </ListGroup.Item>
+
+        <ListGroup.Item >
+          <div className="d-flex justify-content-between">
+            <h5>Add</h5>
+            <small>Control Hand</small>
+          </div>
+          <p>
+            Add a card with the chosen values to the bottom of your twist deck.
+          </p>
+          <small><code>!add [value] [suit]</code></small>
         </ListGroup.Item>
 
 
