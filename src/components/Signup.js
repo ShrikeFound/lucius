@@ -1,6 +1,7 @@
 import React, { useRef,useState } from 'react'
 import { Card, Button, Form, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
+import app from "../firebase.js"
 import { Link, useHistory } from 'react-router-dom'
 const Signup = () => {
 
@@ -15,15 +16,19 @@ const Signup = () => {
   
 
   const handleSubmit = async (e) => {
+    console.log("submitting!");
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
     try {
+      console.log("trying!");
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      console.log("in here~");
       history.push("/dashboard");
+
     } catch (error) {
       setError("Sign up failed.");
     }
