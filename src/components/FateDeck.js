@@ -31,9 +31,9 @@ const FateDeck = () => {
             <small>Fate Deck</small>
           </div>
           <p>
-            Flips a number of cards from the fate deck. Omitting a number will flip one (1) card by default.
+            Flips a number of cards from the fate deck. Add '+' or '-' as an argument to modify the flip or enter a number to flip that many cards.
           </p>
-          <small><code>!flip [number]</code></small>
+          <small><code>!flip [++]</code>/<code>!flip [--]</code> or <code>!flip [number]</code>/<code>!flip [-number]</code></small>
         </ListGroup.Item>
 
         <ListGroup.Item >
@@ -81,6 +81,17 @@ const FateDeck = () => {
             Add a card with the chosen values to the bottom of your twist deck.
           </p>
           <small><code>!add [value] [suit]</code></small>
+        </ListGroup.Item>
+
+        <ListGroup.Item >
+          <div className="d-flex justify-content-between">
+            <h5>Remove</h5>
+            <small>Control Hand</small>
+          </div>
+          <p>
+            Remove card with the chosen values from your twist deck. You can select by value or, if there are multiple cards with the same value, value and suit.
+          </p>
+          <small><code>!remove [value] [suit]</code></small>
         </ListGroup.Item>
 
 
