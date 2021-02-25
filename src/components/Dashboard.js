@@ -2,10 +2,12 @@ import React, { useState,useRef } from 'react'
 import { Button, Card, Form} from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import app from "../firebase.js"
+import FormContainer from './FormContainer'
 const Dashboard = () => {
   const { currentUser } = useAuth();
   const db = app.database()
   const [error, setError] = useState("");
+
   const nameRef = useRef();
   
   db.ref('users/' + currentUser.uid).on("value", (snapshot) => {
@@ -40,22 +42,22 @@ const Dashboard = () => {
 
 
   return (
-    <>
+
       <Card className="container">
-        <Card.Body>
-          <h2 className="text-center mb-4">Characters</h2>
-          <p>for {currentUser.email}</p>
+      <h2 className="text-center mb-4">Characters</h2>
+      <Card.Body className="bg-secondary text-white w-50 mx-auto">
+          <h2 className="text-center mb-4">New Character</h2>
           <Form>
             <Form.Group>
               <Form.Label>Character Name:</Form.Label>
               <Form.Control type="text" ref={nameRef} placeholder="character name"></Form.Control>
-              <Button variant="primary" type="submit" onClick={createCharacter}>Create New Character</Button>
-              <Form.Text className="danger">{error}</Form.Text>
-            </Form.Group>
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={createCharacter}>Create New Character</Button>
+          <Form.Text className="danger">{error}</Form.Text>
           </Form>
         </Card.Body>
-      </Card>
-    </>
+        </Card>
+
   )
 }
 
