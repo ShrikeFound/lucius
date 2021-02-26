@@ -15,7 +15,7 @@ const CharacterForm = ({ character, id,db }) => {
   const name = useRef();
 
 
-  const handleSubmit = (e) => {
+  const updateCharacter = (e) => {
     e.preventDefault();
     console.log("submitting character changes...")
     console.log(currentUser.uid)
@@ -33,10 +33,20 @@ const CharacterForm = ({ character, id,db }) => {
     } 
     characterRef.update(characterAspects)
   }
+
+  const deleteCharacter = (e) => {
+    e.preventDefault();
+    const characterRef = db.ref('users/' + currentUser.uid + '/characters/' + id)
+    characterRef.remove();
+    console.log("deleting...");
+  }
+
+
   return (
     <Card className="bg-secondary text-white">
       <Card.Body >
-        <h3 className="text-center mb-4">{character.name}</h3>
+        <h2 className="text-center mb-4">{character.name}</h2>
+        <Button className = "delete-button btn-danger" onClick={deleteCharacter}>X</Button>
         <Form>
           <Form.Group>
             <Form.Label>Character Name:</Form.Label>
@@ -87,7 +97,7 @@ const CharacterForm = ({ character, id,db }) => {
             <Form.Control type="number" defaultValue={character.tenacity} ref={tenacity}></Form.Control>
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick={handleSubmit} >Update Name</Button>
+          <Button variant="primary" type="submit" onClick={updateCharacter} >Update Name</Button>
           
           <Form.Text className="danger"></Form.Text>
         </Form>

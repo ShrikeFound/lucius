@@ -50,8 +50,6 @@ const Dashboard = () => {
   }
 
 
-
-
   return (
       <Container>
       <h2 className="text-center mb-4">Characters</h2>

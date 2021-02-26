@@ -72,9 +72,16 @@ h6 {
 .row .card {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  min-width: 600px;
+  min-width: 450px;
+  margin-bottom: 2rem;
 }
 .row {
   margin-top: 4rem;
   justify-content: center;
+}
+
+.delete-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
