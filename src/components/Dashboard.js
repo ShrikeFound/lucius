@@ -74,7 +74,7 @@ const Dashboard = () => {
       <Row className="mx-auto">
       {!loading && snapshots &&
         snapshots.map((character, index) => (
-          <CharacterForm character={character.val()} index={index} key={character.key}/>
+          <CharacterForm character={character.val()} index={index} key={character.key} id={character.key} db={db}/>
     ))}
       </Row>
         </Container>
