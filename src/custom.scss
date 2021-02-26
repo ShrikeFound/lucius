@@ -68,3 +68,13 @@ h6 {
 .card {
   background-color: inherit;
 }
+
+.row .card {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  min-width: 600px;
+}
+.row {
+  margin-top: 4rem;
+  justify-content: center;
+}

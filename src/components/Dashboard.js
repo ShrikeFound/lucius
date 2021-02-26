@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useList } from "react-firebase-hooks/database";
-import { Button, Card, Container, Form} from 'react-bootstrap'
+import { Button, Card, Container, Form, Row} from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import app from "../firebase.js"
 import CharacterForm from './CharacterForm';
@@ -30,7 +30,17 @@ const Dashboard = () => {
     e.preventDefault();
     setInputError("");
     if (nameRef.current.value.length > 0) {
-      const newCharacter = charactersRef.push({name: nameRef.current.value});
+      const defaultAttributes = {
+        might: 0,
+        grace: 0,
+        speed: 0,
+        resilience: 0,
+        intellect: 0,
+        charm: 0,
+        cunning: 0,
+        tenacity: 0
+      }
+      const newCharacter = charactersRef.push({name: nameRef.current.value,...defaultAttributes});
       console.log(newCharacter);   
       nameRef.current.value = null
     } else {
@@ -61,14 +71,12 @@ const Dashboard = () => {
         
       </Container>
       </Card>
-
-
-      <h3>Characters</h3>
+      <Row className="mx-auto">
       {!loading && snapshots &&
         snapshots.map((character, index) => (
-          <CharacterForm character={character.val()} index={index}/>
+          <CharacterForm character={character.val()} index={index} key={character.key}/>
     ))}
-
+      </Row>
         </Container>
   )
 }
