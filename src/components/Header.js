@@ -36,8 +36,7 @@ const Header = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Link className="nav-link" to="/using-lucius">Using Lucius</Link>
-          <Link className="nav-link" to="/character-sheet">Character Sheet</Link>
-          {currentUser ? <Link className="nav-link" to="/dashboard">Dashboard</Link> : null}
+          {currentUser ? <Link className="nav-link" to="/character-sheet">Character Sheet</Link> : null}
         </Nav>
 
           <Nav>

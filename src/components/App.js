@@ -45,7 +45,7 @@ const App = () => {
           </Route>
 
 
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/character-sheet" component={Dashboard} />
 
               </Switch>
             </AuthProvider>

@@ -1,9 +1,9 @@
-import React, { useRef } from 'react'
-import { Button, Card, Form } from 'react-bootstrap'
+import React, { useRef,useState } from 'react'
+import { Button, Card, Form, Row } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 const CharacterForm = ({ character, id,db }) => {
   const { currentUser } = useAuth();
-
+  const [showID, setShowID] = useState(false);
   const might = useRef();
   const grace = useRef();
   const speed = useRef();
@@ -17,6 +17,9 @@ const CharacterForm = ({ character, id,db }) => {
 
   const updateCharacter = (e) => {
     e.preventDefault();
+    const buttonID = "submit-" + id
+    const button = document.getElementById(buttonID);
+    button.disabled = true;
     console.log("submitting character changes...")
     console.log(currentUser.uid)
     const characterRef = db.ref('users/' + currentUser.uid + '/characters/' + id)
@@ -31,7 +34,17 @@ const CharacterForm = ({ character, id,db }) => {
       cunning: Number(cunning.current.value),
       tenacity: Number(tenacity.current.value)
     } 
-    characterRef.update(characterAspects)
+    characterRef.update(characterAspects, (error) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("updated!");
+        setTimeout(() => {
+          button.disabled = false;
+        }, 500);
+        
+      }
+    })
   }
 
   const deleteCharacter = (e) => {
@@ -41,11 +54,17 @@ const CharacterForm = ({ character, id,db }) => {
     console.log("deleting...");
   }
 
+  const toggleID = (e) => {
+    e.preventDefault();
+    setShowID(!showID);
+  }
+  console.log(showID);
 
   return (
     <Card className="bg-secondary text-white">
       <Card.Body >
         <h2 className="text-center mb-4">{character.name}</h2>
+        <Row className="align-items-center justify-content-start character-id"><Button className="btn-dark" onClick={toggleID}>Show ID</Button><input  className="read-only-text" readOnly type='text' value={ showID ? id : ""} ></input></Row>
         <Button className = "delete-button btn-danger" onClick={deleteCharacter}>X</Button>
         <Form>
           <Form.Group>
@@ -97,7 +116,7 @@ const CharacterForm = ({ character, id,db }) => {
             <Form.Control type="number" defaultValue={character.tenacity} ref={tenacity}></Form.Control>
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick={updateCharacter} >Update Name</Button>
+          <Button variant="primary" type="submit" id={"submit-"+id}onClick={updateCharacter} >Update Name</Button>
           
           <Form.Text className="danger"></Form.Text>
         </Form>

@@ -6,7 +6,10 @@ const FateDeck = () => {
     <Container>
       <h1>Using the Lucius Bot</h1>
       <p>
-         A fate deck is automatically created for your use when you add Lucius to your Discord guild. Each user can add and control their respective control hands. You can use the commands shown below to control the deck and control hands.
+        A fate deck is automatically created for your use when you add Lucius to your Discord guild. Each user can add and control their respective control hands. You can use the commands shown below to control the deck and control hands.
+      </p>
+      <p>
+        Once you sign up on the website you can create an update a through the breach character. Once you link it to a guild, you can view your twist deck and conveniently draw,cheat, and discard.
       </p>
       
       <h3 className="mt-5">Commands</h3>

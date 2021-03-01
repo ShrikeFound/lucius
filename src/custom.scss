@@ -85,7 +85,8 @@ h6 {
   right: 10px;
   top: 10px;
 }
-input.form-control {
+input.form-control,
+.read-only-text {
   background-color: inherit;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
@@ -105,4 +106,20 @@ input.form-control:focus {
 }
 input.form-control::placeholder {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.submitting,
+.submitting:hover,
+.submitting:focus {
+  background-color: #444;
+  border-color: #444;
+  box-shadow: none;
+}
+
+.character-id {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.read-only-text {
+  margin-left: 1rem;
 }
