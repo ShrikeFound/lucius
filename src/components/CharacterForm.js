@@ -22,7 +22,7 @@ const CharacterForm = ({ character, id,db }) => {
     button.disabled = true;
     console.log("submitting character changes...")
     console.log(currentUser.uid)
-    const characterRef = db.ref('users/' + currentUser.uid + '/characters/' + id)
+    const characterRef = db.ref('characters/' + id)
     const characterAspects = {
       name: name.current.value,
       might: Number(might.current.value),
@@ -49,7 +49,7 @@ const CharacterForm = ({ character, id,db }) => {
 
   const deleteCharacter = (e) => {
     e.preventDefault();
-    const characterRef = db.ref('users/' + currentUser.uid + '/characters/' + id)
+    const characterRef = db.ref('characters/' + id)
     characterRef.remove();
     console.log("deleting...");
   }

@@ -23,7 +23,8 @@ const Dashboard = () => {
   })
 
   // const userRef = db.ref('users/' + currentUser.uid)
-  const charactersRef = db.ref('users/' + currentUser.uid + '/characters')
+  const userCharactersRef = db.ref('users/' + currentUser.uid + '/characters')
+  const charactersRef = db.ref('characters/')
   const [snapshots, loading] = useList(charactersRef);
   
   const createCharacter = (e) => {
@@ -40,7 +41,8 @@ const Dashboard = () => {
         cunning: 0,
         tenacity: 0
       }
-      const newCharacter = charactersRef.push({name: nameRef.current.value,...defaultAttributes});
+      const newCharacter = charactersRef.push({ name: nameRef.current.value, ...defaultAttributes });
+      userCharactersRef.push({id: newCharacter.key})
       console.log(newCharacter);   
       nameRef.current.value = null
     } else {
