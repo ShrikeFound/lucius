@@ -41,8 +41,10 @@ const Dashboard = () => {
         cunning: 0,
         tenacity: 0
       }
-      const newCharacter = charactersRef.push({ name: nameRef.current.value, ...defaultAttributes });
-      userCharactersRef.push({id: newCharacter.key})
+      const characterData = { name: nameRef.current.value, ...defaultAttributes }
+      const newCharacter = charactersRef.push(characterData);
+      userCharactersRef.child(newCharacter.key).set(characterData)
+      
       console.log(newCharacter);   
       nameRef.current.value = null
     } else {

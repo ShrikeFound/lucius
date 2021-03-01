@@ -23,6 +23,7 @@ const CharacterForm = ({ character, id,db }) => {
     console.log("submitting character changes...")
     console.log(currentUser.uid)
     const characterRef = db.ref('characters/' + id)
+    const userCharactersRef = db.ref('users/' + currentUser.uid + '/characters/'+id)
     const characterAspects = {
       name: name.current.value,
       might: Number(might.current.value),
@@ -34,7 +35,8 @@ const CharacterForm = ({ character, id,db }) => {
       cunning: Number(cunning.current.value),
       tenacity: Number(tenacity.current.value)
     } 
-    characterRef.update(characterAspects, (error) => {
+    userCharactersRef.update(characterAspects, (error) => {
+      characterRef.update(characterAspects, (error) => {
       if (error) {
         console.log(error);
       } else {
@@ -45,13 +47,16 @@ const CharacterForm = ({ character, id,db }) => {
         
       }
     })
+    })
+    
   }
 
   const deleteCharacter = (e) => {
     e.preventDefault();
     const characterRef = db.ref('characters/' + id)
+    const userCharactersRef = db.ref('users/' + currentUser.uid + '/characters/'+id)
     characterRef.remove();
-    console.log("deleting...");
+    userCharactersRef.remove();
   }
 
   const toggleID = (e) => {
