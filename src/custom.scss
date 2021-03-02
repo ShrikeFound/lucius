@@ -123,3 +123,8 @@ input.form-control::placeholder {
 .read-only-text {
   margin-left: 1rem;
 }
+
+.column-image img {
+  max-width: 100%;
+  display: block;
+}
