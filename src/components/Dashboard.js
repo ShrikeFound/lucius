@@ -55,7 +55,7 @@ const Dashboard = () => {
 
 
   return (
-      <Container>
+      <Container className="page">
       <h2 className="text-center mb-4">Characters</h2>
       <Card className="bg-secondary text-white w-50 mx-auto">
       <Card.Body>

@@ -19,7 +19,7 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);  
-      history.push("/dashboard");
+      history.push("/character-sheet");
     } catch (error) {
       setError("Sign in failed.");
       console.log(error);

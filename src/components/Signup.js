@@ -25,8 +25,7 @@ const Signup = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      console.log("in here~");
-      history.push("/dashboard");
+      history.push("/character-sheet");
 
     } catch (error) {
       setError("Sign up failed.");

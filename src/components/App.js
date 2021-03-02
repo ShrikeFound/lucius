@@ -11,6 +11,7 @@ import FormContainer from './FormContainer.js'
 import Header from './Header'
 import "../custom.scss"
 import FateDeck from './FateDeck.js'
+import Footer from './Footer.js'
 const App = () => {
   return (
           <Router>
@@ -47,7 +48,8 @@ const App = () => {
 
           <PrivateRoute exact path="/character-sheet" component={Dashboard} />
 
-              </Switch>
+        </Switch>
+        <Footer/>
             </AuthProvider>
           </Router>  
 
