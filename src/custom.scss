@@ -58,7 +58,7 @@ h6 {
   color: rgba(255, 255, 255, 1) !important;
 }
 #root {
-  padding-top: 8rem;
+  margin-top: 4rem;
 }
 
 .no-side-borders > div {
@@ -135,4 +135,18 @@ input.form-control::placeholder {
 }
 .page {
   min-height: 90vh;
+}
+.jumbotron {
+  position: relative;
+}
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.pt-6 {
+  padding-top: 6rem;
 }

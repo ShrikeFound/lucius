@@ -3,7 +3,7 @@ import { Container, ListGroup } from 'react-bootstrap'
 
 const FateDeck = () => {
   return (
-    <Container>
+    <Container className="pt-6">
       <h1>Using the Lucius Bot</h1>
       <p>
         A fate deck is automatically created for your use when you add Lucius to your Discord guild. Each user can add and control their respective control hands. You can use the commands shown below to control the deck and control hands.

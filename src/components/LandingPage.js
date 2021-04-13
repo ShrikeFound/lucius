@@ -1,16 +1,20 @@
 import React from 'react'
-import { Jumbotron, Container, Row } from 'react-bootstrap'
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap'
 import undrawTabs from '../images/undraw_tabs.svg'
 import undrawMessages from '../images/undraw_messages.svg'
+import luciusImage from '../images/lucius.png'
 const LandingPage = () => {
   return (
     <>
-      <Jumbotron className = "bg-dark text-white d-flex text-center align-items-center" style={{minHeight: "60vh"}}>
+      <Jumbotron className = "bg-dark text-white d-flex text-center align-items-center" style={{minHeight: "60vh",backgroundImage:`url(${luciusImage})`,backgroundSize:"contain",backgroundRepeat:"no-repeat",backgroundPosition:"80% 50%"}}>
+        <div className="bg-overlay d-flex text-center align-items-center">
         <Container className="text-container">
+          {/* <img className="lucius-logo" src={luciusImage} alt="Lucius leaping away from the viewer, cards in hand"/> */}
           <h1>Challenge Your Destiny.</h1>
           <p>Add the Lucius bot to Discord to easily keep track of fate decks, control hands, and character details. Mix and match features to play the game you want.</p>
           <a className="btn btn-primary btn-hero" href="https://discord.com/oauth2/authorize?client_id=800485041159012372&scope=bot&permissions=658496" target="_blank" rel='noreferrer'>Add Lucius to Discord</a>
-        </Container>
+          </Container>
+          </div>
       </Jumbotron>  
 
       <Container>
@@ -43,8 +47,6 @@ const LandingPage = () => {
         </Row>
 
       </Container>
-
-
 
 
     </>
